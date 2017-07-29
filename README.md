@@ -1,7 +1,50 @@
 # Unscented Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
 
-In this project utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project reburic. 
+
+[DS1]: ./imgs/Dataset1_UKF.jpg
+[DS2]: ./imgs/Dataset2_UKF.jpg
+[NISLAS]: ./imgs/NIS-laser.png
+[NISRAD]: ./imgs/NIS-radar.png
+
+
+
+[![IMAGE ALT TEXT](./imgs/UKF_closeup.jpg)](https://www.youtube.com/watch?v=npJvO1gt4WU "UKF video")
+**Click on the image to go to the youtube video**
+
+
+
+I achieved the following RMSE results in Dataset 1 by using an UKF:
+
+|    | Fused data | Just lidar | Just radar |
+|:--:|:----------:|:----------:|:----------:|
+| px |   0.0710   |   0.1729   |   0.2188   |
+| py |   0.0817   |   0.1483   |   0.3064   |
+| vx |   0.3378   |   0.5831   |   0.3633   |
+| vy |   0.2353   |   0.2644   |   0.3700   |
+
+As you can see, the fused result is better than any of the individual ones. It is also important to remark that the lidar is much more accurate than the radar, specially in the lateral position and while the lidar cannot measure directly the velocity of the target, it is still able to do an acceptable job (specially in the lateral velocity). On the other hand, the radar is better than the lidar in measuring the longitudinal speed of the target.
+
+-----
+
+  Fusion results in Dataset 1:
+  ![DS1]
+
+----
+  Fusion results in Dataset 2:
+  ![DS2]
+
+-----
+
+  NIS for the lidar in Dataset 1:
+  ![NISLAS]
+
+-----
+  NIS for the radar in Dataset 1:
+  ![NISRAD]
+
+-----
+In this project utilize an Unscented Kalman Filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project reburic.
 
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 

@@ -64,11 +64,25 @@ public:
   ///* Augmented state dimension
   int n_aug_;
 
+  ///* Number of sigma points
+  int n_sig_;
+
   ///* Sigma point spreading parameter
   double lambda_;
 
+  ///* Radar covariance matrix
+  MatrixXd R_radar_;
 
-  /**
+  ///* Lidar covariance matrix
+  MatrixXd R_laser_;
+
+  ///* NIS (normalized innovation squared) for the laser
+  double NIS_laser_;
+
+  ///* NIS (normalized innovation squared) for the radar
+  double NIS_radar_;
+
+    /**
    * Constructor
    */
   UKF();
